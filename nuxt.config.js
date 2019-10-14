@@ -1,10 +1,16 @@
 
 export default {
   mode: 'universal',
+  router: {
+    base: '/nuxt-app/'
+  },
   /*
   ** Headers of the page
   */
   head: {
+    base: {
+      href: 'router.base'
+    },
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -42,7 +48,7 @@ export default {
     '@nuxtjs/axios',
     [
       '@nuxtjs/dotenv',
-      { filename: process.env.NODE_ENV !== 'production' ? ".env.dev" : ".env.prod" }
+      { filename: process.env.NODE_ENV !== 'production' ? ".env.dev" : ".env.pro" }
     ]
   ],
   /*
@@ -55,6 +61,7 @@ export default {
   ** Build configuration
   */
   build: {
+    //publicPath: 'https://kt-kiyoshi.com/nuxt-app',
     /*
     ** You can extend webpack config here
     */
